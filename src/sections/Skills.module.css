@@ -1,0 +1,207 @@
+.skills {
+  padding-block: var(--section-y);
+}
+
+.aside {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 44px;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  min-height: 360px;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  background: var(--color-sky-100);
+}
+
+.featured {
+  background: var(--color-periwinkle);
+  color: var(--color-white);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.featured .label {
+  color: var(--color-white);
+}
+
+.badge {
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--color-cream);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  max-width: 7em;
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.02;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+.featured .title {
+  max-width: none;
+  font-size: 58px;
+  color: var(--color-white);
+}
+
+.description {
+  max-width: 440px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+
+.featured .description {
+  color: var(--color-white);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.tags li {
+  padding: 5px 9px;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+}
+
+/* Timeline graphic */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ticks {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.lane {
+  display: flex;
+  gap: 3px;
+  height: 22px;
+}
+
+.clip {
+  border-radius: 3px;
+}
+
+.solid .clip {
+  background: rgb(255 255 255 / 0.92);
+}
+
+.soft .clip {
+  background: var(--color-sky-100);
+}
+
+.ghost {
+  height: 14px;
+}
+
+.ghost .clip {
+  background: rgb(255 255 255 / 0.35);
+}
+
+.playhead {
+  position: absolute;
+  top: 12px;
+  bottom: -6px;
+  left: 58%;
+  width: 2px;
+  background: var(--color-cream);
+  animation: scrub 6s ease-in-out infinite alternate;
+}
+
+@keyframes scrub {
+  from {
+    left: 20%;
+  }
+
+  to {
+    left: 80%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 24px;
+  }
+
+  .title {
+    max-width: none;
+    font-size: 30px;
+  }
+
+  .featured .title {
+    font-size: 40px;
+  }
+}

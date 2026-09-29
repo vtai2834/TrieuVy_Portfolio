@@ -1,0 +1,39 @@
+.frame {
+  position: relative;
+}
+
+.corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 0 solid var(--color-white);
+  pointer-events: none;
+}
+
+.tl {
+  top: 16px;
+  left: 16px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.tr {
+  top: 16px;
+  right: 16px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+.bl {
+  bottom: 16px;
+  left: 16px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.br {
+  right: 16px;
+  bottom: 16px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+}

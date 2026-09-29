@@ -1,0 +1,54 @@
+/*
+ * Design tokens — the single source of truth for colour, type and spacing.
+ * Change a value here and it updates everywhere.
+ */
+:root {
+  /* Colour — light, sky-blue pastel base (color_tone_1) */
+  --color-bg: #f8f7f3;
+  --color-sky-50: #eef2fb;
+  --color-sky-100: #dce5f7;
+  --color-sky-150: #e9eefa;
+  --color-sky-300: #afc2ec;
+  --color-periwinkle: #5a6fa6;
+  --color-ink: #1e2745;
+  --color-ink-soft: #4a5575;
+  --color-white: #ffffff;
+
+  /* Colour — accent for what matters most (color_tone_2) */
+  --color-accent: #6b1219;
+  --color-accent-hover: #8a1a23;
+  --color-cream: #f3ebdd;
+  --color-rec: #f26b6b;
+
+  /* Type */
+  --font-display: 'Anton', 'Impact', sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-script: 'Mrs Saint Delafield', cursive;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-body: 'Be Vietnam Pro', system-ui, sans-serif;
+
+  /* Layout */
+  --container: 1280px;
+  --gutter: clamp(16px, 5.5vw, 80px);
+  --section-y: clamp(56px, 8vw, 100px);
+  --nav-height: 80px;
+
+  /* Shape & depth */
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 16px 40px rgb(30 39 69 / 0.08);
+  --shadow-card: 0 20px 50px rgb(30 39 69 / 0.14);
+
+  /* Pattern */
+  --stripes: repeating-linear-gradient(
+    90deg,
+    var(--color-sky-100) 0 40px,
+    var(--color-sky-150) 40px 80px
+  );
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}

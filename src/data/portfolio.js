@@ -6,10 +6,10 @@ import portraitHero from '@/assets/images/portrait-hero.jpg';
 import portraitAbout from '@/assets/images/portrait-about.jpg';
 import kioskOfficials from '@/assets/images/kiosk-officials.jpg';
 import kioskDemo from '@/assets/images/kiosk-demo.jpg';
-import videoPoliceKiosk from '@/assets/images/video-police-kiosk.jpg';
-import videoDigitalEconomy from '@/assets/images/video-digital-economy.jpg';
+import videoDailyVlog from '@/assets/images/video-daily-vlog.jpg';
+import videoAef2026 from '@/assets/images/video-aef-2026.jpg';
 import videoVoiceAi from '@/assets/images/video-voice-ai.jpg';
-import videoAiDms from '@/assets/images/video-ai-dms.jpg';
+import videoCybertech from '@/assets/images/video-cybertech.jpg';
 import userguide from '@/assets/images/userguide-1.jpg';
 import brochureOutside from '@/assets/images/brochure-outside.jpg';
 import brochureInside from '@/assets/images/brochure-inside.jpg';
@@ -18,7 +18,7 @@ export const profile = {
   name: 'Ton Trieu Vy',
   firstName: 'Vy',
   role: 'Digital Marketer',
-  roleAccent: 'Video Editor',
+  roleAccent: 'Aspiring Content Creator',
   location: 'Viet Nam',
   year: 2026,
   email: 'tontrieuvy.com.vn@gmail.com',
@@ -78,23 +78,28 @@ export const skills = [
   },
 ];
 
-/* orientation: 'vertical' (9:16) or 'horizontal' (16:9) */
+/*
+ * orientation: 'vertical' (9:16) or 'horizontal' (16:9) — sets the card shape.
+ * format (optional): label shown on the card when the source video's ratio
+ * differs from the card shape.
+ */
 export const videos = [
   {
-    id: 'police-kiosk',
-    title: 'Police Service Kiosk',
-    url: 'https://youtu.be/f5ecV-8th2A',
+    id: 'daily-vlog',
+    title: 'Daily Vlog',
+    url: 'https://www.tiktok.com/@njshjanjdkwksoje/video/7617857985951370514',
     orientation: 'vertical',
-    thumbnail: videoPoliceKiosk,
-    alt: 'Police Service Kiosk user-guide video thumbnail',
+    format: '16:9',
+    thumbnail: videoDailyVlog,
+    alt: 'Daily vlog thumbnail — a peace-sign selfie, a matcha drink and dinner',
   },
   {
-    id: 'digital-economy-kiosk',
-    title: 'Digital Economy Kiosk',
-    url: 'https://youtu.be/t0Rc5IE_idg',
+    id: 'aef-2026',
+    title: 'AEF 2026 — Day 1',
+    url: 'https://www.facebook.com/reel/1526656092848936/',
     orientation: 'vertical',
-    thumbnail: videoDigitalEconomy,
-    alt: 'Digital Economy Kiosk video thumbnail',
+    thumbnail: videoAef2026,
+    alt: 'Day 1 at the Autumn Economic Forum 2026 with CyberTech — reel thumbnail',
   },
   {
     id: 'voice-ai-ip',
@@ -105,12 +110,12 @@ export const videos = [
     alt: 'Voice AI IP video thumbnail',
   },
   {
-    id: 'ai-dms',
-    title: 'AI-DMS',
-    url: 'https://youtu.be/D-T1BCFvXrs',
+    id: 'cybertech',
+    title: 'CyberTech',
+    url: 'https://www.youtube.com/watch?v=9P1u67njT6E',
     orientation: 'horizontal',
-    thumbnail: videoAiDms,
-    alt: 'AI-DMS video thumbnail',
+    thumbnail: videoCybertech,
+    alt: 'CyberTech AI Kiosk video thumbnail',
   },
 ];
 

@@ -16,9 +16,9 @@ function VideoCard({ video, delay }) {
         </span>
         <span className={styles.caption}>
           <span className={styles.title}>{video.title}</span>
-          <span className={styles.format}>{FORMAT_LABEL[video.orientation]}</span>
+          <span className={styles.format}>{video.format ?? FORMAT_LABEL[video.orientation]}</span>
         </span>
-        <span className="visually-hidden">(opens YouTube in a new tab)</span>
+        <span className="visually-hidden">(opens in a new tab)</span>
       </a>
     </Reveal>
   );
@@ -35,7 +35,7 @@ export default function VideoWork() {
           accent="my edits"
           aside={
             <p className={styles.hint}>
-              Tap a video to play it on YouTube
+              Tap a video to watch it
               <Icon name="arrowUpRight" />
             </p>
           }

@@ -14,7 +14,6 @@ export default function Hero() {
 
       <div className={`container ${styles.grid}`}>
         <div className={styles.identity}>
-          <p className={styles.meta}>Portfolio — {profile.year}</p>
           <p className={styles.signature}>{profile.name}</p>
           <h1 className={styles.role}>
             {profile.role}
@@ -42,7 +41,6 @@ export default function Hero() {
         </div>
 
         <div className={styles.intro}>
-          <p className={styles.meta}>Based in {profile.location}</p>
           <div className={styles.card}>
             <p>{profile.tagline}</p>
             <div className={styles.buttons}>

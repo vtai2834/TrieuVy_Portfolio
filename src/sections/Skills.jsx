@@ -37,7 +37,72 @@ function Timeline() {
   );
 }
 
+/* Small decorative graphics that fill the top of the secondary cards. */
+/* The content workflow: done → in progress → up next. */
+const PIPELINE = [
+  { label: 'Idea', state: 'done' },
+  { label: 'Script', state: 'done' },
+  { label: 'Post', state: 'current' },
+  { label: 'Analyze', state: 'next' },
+];
+
+const RULER = ['0', '10', '20', '30', '40'];
+const HANDLES = ['nw', 'n', 'ne', 'e', 'se', 's', 'sw', 'w'];
+
+/* A page being laid out in a design tool: ruler, margin guides, a selected headline. */
+function Layout() {
+  return (
+    <div className={`${styles.graphic} ${styles.layout}`} aria-hidden="true">
+      <div className={styles.ruler}>
+        {RULER.map((mark) => (
+          <span key={mark}>{mark}</span>
+        ))}
+      </div>
+      <div className={styles.page}>
+        <span className={styles.headline}>
+          <span className={styles.headlineText} />
+          {HANDLES.map((handle) => (
+            <span key={handle} className={`${styles.handle} ${styles[handle]}`} />
+          ))}
+        </span>
+        <span className={styles.media}>
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0 0L100 100M100 0L0 100" vectorEffect="non-scaling-stroke" />
+          </svg>
+        </span>
+        <span className={styles.lines}>
+          <span />
+          <span />
+          <span />
+        </span>
+        <span className={styles.cta} />
+      </div>
+    </div>
+  );
+}
+
+function Pipeline() {
+  return (
+    <div className={`${styles.graphic} ${styles.pipeline}`} aria-hidden="true">
+      <div className={styles.steps}>
+        <span className={styles.rail} />
+        {PIPELINE.map((step) => (
+          <span key={step.label} className={`${styles.step} ${styles[step.state]}`}>
+            {step.label}
+            <span className={styles.dot} />
+            <span className={styles.segment} />
+          </span>
+        ))}
+        <span className={styles.stepHead} />
+      </div>
+    </div>
+  );
+}
+
+const GRAPHICS = { layout: Layout, pipeline: Pipeline };
+
 function SkillCard({ skill, index }) {
+  const Graphic = GRAPHICS[skill.graphic];
   const number = String(index + 1).padStart(2, '0');
 
   return (
@@ -54,6 +119,7 @@ function SkillCard({ skill, index }) {
       </div>
 
       {skill.featured && <Timeline />}
+      {Graphic && <Graphic />}
 
       <div className={styles.cardBody}>
         <h3 className={styles.title}>{skill.title}</h3>
@@ -79,12 +145,6 @@ export default function Skills() {
           label="Personal skills"
           title="What I do"
           accent="best"
-          aside={
-            <p className={styles.aside}>
-              Video comes first — backed by the design and content know-how to make every edit
-              work for marketing.
-            </p>
-          }
         />
         <div className={styles.grid}>
           {skills.map((skill, i) => (

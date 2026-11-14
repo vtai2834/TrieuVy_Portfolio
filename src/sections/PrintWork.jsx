@@ -7,7 +7,7 @@ export default function PrintWork() {
   return (
     <section id="visual" className={styles.print}>
       <div className="container">
-        <SectionHeader index="05" label="Visual design" title="Print & docs" accent="that sell" />
+        <SectionHeader index="05" label="Visual design" title="Print & docs" />
         <div className={styles.grid}>
           {printWork.map((item, i) => (
             <Reveal as="figure" key={item.id} delay={i * 100} className={styles.card}>

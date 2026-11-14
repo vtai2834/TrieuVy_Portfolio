@@ -20,7 +20,8 @@
 .track {
   display: flex;
   width: max-content;
-  animation: scroll 40s linear infinite;
+  /* 40s per copy of the list × REPEAT (3) in Marquee.jsx keeps the original speed */
+  animation: scroll 120s linear infinite;
 }
 
 .marquee:hover .track {

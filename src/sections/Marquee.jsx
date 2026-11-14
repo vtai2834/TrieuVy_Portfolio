@@ -2,6 +2,8 @@ import { marqueeItems } from '@/data/portfolio';
 import styles from './Marquee.module.css';
 
 const SECONDS_PER_ITEM = 15;
+/* How many times the list repeats inside one loop — each loop must be wider than the widest screen. */
+const REPEAT = 3;
 
 const toTimecode = (seconds) => {
   const mm = String(Math.floor(seconds / 60)).padStart(2, '0');
@@ -9,9 +11,10 @@ const toTimecode = (seconds) => {
   return `${mm}:${ss}`;
 };
 
-/* A timeline-style scrolling strip. The list is rendered twice for a seamless loop. */
+/* A timeline-style scrolling strip. The loop is rendered twice so it scrolls seamlessly. */
 export default function Marquee() {
-  const items = [...marqueeItems, ...marqueeItems];
+  const loop = Array.from({ length: REPEAT }, () => marqueeItems).flat();
+  const items = [...loop, ...loop];
 
   return (
     <div className={styles.marquee}>

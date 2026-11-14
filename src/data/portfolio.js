@@ -18,7 +18,7 @@ export const profile = {
   name: 'Ton Trieu Vy',
   firstName: 'Vy',
   role: 'Digital Marketer',
-  roleAccent: 'Aspiring Content Creator',
+  roleAccent: 'Content Creator',
   location: 'Viet Nam',
   year: 2026,
   email: 'tontrieuvy.com.vn@gmail.com',
@@ -63,18 +63,20 @@ export const skills = [
   {
     id: 'visual',
     track: 'Visual',
+    graphic: 'layout',
     title: 'Visual design',
     description:
       'Key visuals, social visuals and print — catalogs, brochures and user guides that make a product easy to see and understand.',
-    tags: ['Canva', 'Print', 'Social'],
+    tags: ['Canva', 'Social'],
   },
   {
     id: 'content',
     track: 'Content',
+    graphic: 'pipeline',
     title: 'Content creation',
     description:
       'Engaging social content and product communication that connects brands with their audiences.',
-    tags: ['Ideas', 'Copy', 'Social'],
+    tags: ['Ideas', 'Analysis', 'Social'],
   },
 ];
 

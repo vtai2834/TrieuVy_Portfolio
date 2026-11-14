@@ -12,28 +12,12 @@ export default function CaseStudy() {
       <div className="container">
         <SectionHeader
           index="04"
-          label="Project portfolio"
+          label="Project"
           title={caseStudy.title}
           accent={caseStudy.subtitle}
           accentSize="small"
           size="lg"
         />
-
-        <div className={styles.showcase}>
-          <Reveal className={styles.stat}>
-            <span className={styles.statLabel}>Result</span>
-            <div className={styles.statBody}>
-              <span className={styles.statValue}>{stat.value}</span>
-              <span className={styles.statText}>{stat.label}</span>
-              <span className={styles.statNote}>{stat.note}</span>
-            </div>
-          </Reveal>
-          {photos.map((photo, i) => (
-            <Reveal key={photo.src} delay={(i + 1) * 100} className={styles.photoWrap}>
-              <img src={photo.src} alt={photo.alt} className={styles.photo} loading="lazy" />
-            </Reveal>
-          ))}
-        </div>
 
         <div className={styles.details}>
           <Reveal as="article" className={`${styles.panel} ${styles.problem}`}>
@@ -60,6 +44,22 @@ export default function CaseStudy() {
             </ul>
           </Reveal>
         </div>
+        <div className={styles.showcase}>
+          <Reveal className={styles.stat}>
+            <span className={styles.statLabel}>Result</span>
+            <div className={styles.statBody}>
+              <span className={styles.statValue}>{stat.value}</span>
+              <span className={styles.statText}>{stat.label}</span>
+              <span className={styles.statNote}>{stat.note}</span>
+            </div>
+          </Reveal>
+          {photos.map((photo, i) => (
+            <Reveal key={photo.src} delay={(i + 1) * 100} className={styles.photoWrap}>
+              <img src={photo.src} alt={photo.alt} className={styles.photo} loading="lazy" />
+            </Reveal>
+          ))}
+        </div>
+
       </div>
     </section>
   );
